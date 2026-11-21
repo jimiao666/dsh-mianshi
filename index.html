@@ -485,7 +485,7 @@ async function boot() {
   app = new PIXI.Application({ backgroundAlpha: 0, antialias: false, autoDensity: true, powerPreference: 'high-performance',
     resolution: Math.min(window.devicePixelRatio || 1, 1.25), resizeTo: stageEl });
   stageEl.appendChild(app.view);
-  if (TEXT_MODE) { document.getElementById('loading')?.remove(); document.getElementById('textStage').hidden = false; document.getElementById('stage').style.display = 'none'; log('纯文字模式（不加载模型）'); return; }
+  if (TEXT_MODE) { document.getElementById('loading')?.remove(); document.getElementById('btnStart').disabled = false; document.getElementById('textStage').hidden = false; document.getElementById('stage').style.display = 'none'; log('纯文字模式（不加载模型）'); return; }
   window.__slowT = setTimeout(() => { const b = document.getElementById('btnTextMode'); if (b) { b.textContent = '太慢？点这里改用纯文字模式'; b.classList.add('primary'); } }, 15000);
   window.__toTextT = setTimeout(() => enterTextMode('超过 75 秒仍未加载完'), 75000);
   try { await prefetchModel(); } catch (e) { clearTimeout(window.__slowT); clearTimeout(window.__toTextT); enterTextMode(e.message); return; }
