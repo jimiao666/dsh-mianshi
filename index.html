@@ -103,7 +103,7 @@
       <div class="label">当前题</div>
       <div class="q" id="qText">点「开始面试」，她会先做一段自我介绍并出第一题。</div>
       <div class="row">
-        <button class="primary" id="btnStart">开始面试</button>
+        <button class="primary" id="btnStart" disabled>开始面试</button>
         <button id="btnNext" disabled>下一题</button>
         <button id="btnFinish" disabled>提前结束</button>
         <label style="font-size:12px;color:var(--dim)"><input type="checkbox" id="mute" /> 静音</label>
@@ -496,6 +496,7 @@ async function boot() {
   app.ticker.add(step);
   clearTimeout(window.__slowT); clearTimeout(window.__toTextT);
   document.getElementById('loading')?.remove();
+  const bs = document.getElementById('btnStart'); if (bs) { bs.disabled = false; bs.textContent = '开始面试'; }
   log('模型就绪');
 }
 function fit() {
@@ -645,7 +646,7 @@ async function finish() {
   $('#btnNext').disabled = true; $('#btnFinish').disabled = true; $('#btnSubmit').disabled = true;
   const list = S.results.map((x, i) => `第 ${x.q.id ? i + 1 : i + 1} 题 · ${x.q.tag}　<b>${x.r.overall}</b>`).join('<br>');
   const avg = S.results.length ? Math.round(S.results.reduce((a, x) => a + (x.r.overall || 0), 0) / S.results.length) : 0;
-  $('#report').innerHTML = `${list}<br>平均分（${S.results.length} 题）：<b>${avg}</b><br><span style="font-size:12px">本地规则评分（单文件版，不联网）</span>`;
+  $('#report').innerHTML = `${list}<br>平均分（${S.results.length} 题）：<b>${avg}</b><br><span style="font-size:12px">本地规则评分（网页演示版，不调模型）</span>`;
   setPhase('idle', '面试结束');
   await speak('今天就到这里，谢谢你。报告在右边，回去慢慢看。');
 }
