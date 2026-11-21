@@ -457,7 +457,7 @@ async function prefetchModel() {
       const mbs = bytes / 1048576;
       const speed = mbs / sec;
       const eta = speed > 0.01 ? Math.max(1, Math.round((20 - Math.min(20, mbs)) / speed)) : 0;
-      setLoadText('已下载 ' + mbs.toFixed(1) + ' MB · ' + speed.toFixed(2) + ' MB/s · ' + finished + '/' + files.length + (eta ? ' · 约 ' + eta + ' 秒' : ''));
+      setLoadText('已下载 ' + mbs.toFixed(1) + ' MB · ' + speed.toFixed(2) + ' MB/s' + (finished ? ' · 完成 ' + finished + '/' + files.length : '') + (eta ? ' · 约 ' + eta + ' 秒' : ''));
       setBar(finished / files.length);
     };
     await Promise.all(files.map(async (f) => {
