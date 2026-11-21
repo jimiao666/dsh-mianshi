@@ -130,9 +130,9 @@
 </div>
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<script src="https://cdn.jsdelivr.net/gh/jimiao666/dsh-mianshi@a37491d624e1439d712fb0731267daead85692fa/lib/live2dcubismcore.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/jimiao666/dsh-mianshi@a37491d624e1439d712fb0731267daead85692fa/lib/pixi.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/jimiao666/dsh-mianshi@a37491d624e1439d712fb0731267daead85692fa/lib/cubism4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/jimiao666/dsh-mianshi@eff7eabd27f49a6bb95428b057bc67389bf52356/lib/live2dcubismcore.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/jimiao666/dsh-mianshi@eff7eabd27f49a6bb95428b057bc67389bf52356/lib/pixi.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/jimiao666/dsh-mianshi@eff7eabd27f49a6bb95428b057bc67389bf52356/lib/cubism4.min.js"></script>
 <script>// 评分：优先走 DeepSeek（真 key 才走），没 key 或调用失败就退回本地规则，并在结果里写明后端。
 // 本地规则不是「糊弄」，它只看可数的事实：结构词、数字、关键词命中、复盘词；口径写死在返回的 basis 里。
 
@@ -396,7 +396,7 @@ async function scoreAnswerV4(question, answer, opts = {}) {
 window.SCORE = { localScoreV4, verdictOf, DEFAULT_WEIGHTS, SUB_WEIGHTS, LOCAL_FOLLOWUP };
 </script>
 <script>
-const BASE = 'https://cdn.jsdelivr.net/gh/jimiao666/dsh-mianshi@a37491d624e1439d712fb0731267daead85692fa/';
+const BASE = 'https://cdn.jsdelivr.net/gh/jimiao666/dsh-mianshi@eff7eabd27f49a6bb95428b057bc67389bf52356/';
 const DATA = { modelUrl: BASE + 'model/大肥鱼.model3.json', voice: {"你好，我是大肥鱼，今天由我来面你。别紧张，我们就当聊一聊。":"out/tts/e1256bc848d4f3ad.mp3","你好，我已经看过你的简历和岗位要求了，我们开始面试。":"out/tts/35ff6f2989c15a29.mp3","第 1 题。先花一分钟做个自我介绍吧。说清楚你现在在做什么、手上有什么成果、为什么想做人力资源这个方向。":"out/tts/bddf7c5d2059eea4.mp3","第 2 题。挑一个你最近做的项目，说说它最难的地方在哪、你怎么判断该怎么解决、最后结果怎么样。":"out/tts/4501e3a49efece2f.mp3","第 3 题。讲一次你和别人意见不一致的经历：当时分歧是什么、你怎么处理的、事后回头看有没有更好的做法。":"out/tts/efdfbacac56257bc.mp3","第 4 题。说一件你做过但没做成的事：你当时的目标是什么、卡在哪一步、从里面学到了什么。":"out/tts/4c38c8cd69d5989f.mp3","第 5 题。如果一位候选人的简历很漂亮，但面试时表达很紧、明显紧张，你会怎么判断要不要推进？":"out/tts/f3663d483c806781.mp3","第 6 题。你用过什么工具或方法来提高招聘/人事工作的效率？效果怎么衡量、有什么副作用？":"out/tts/e00d3d71d1dbea7f.mp3","第 7 题。当用人部门和人力的判断不一致（比如他们坚持要一个你觉得不合适的人），你会怎么推进？":"out/tts/2b0eb92d1c1a0041.mp3","第 8 题。同时有三件急事压在你身上（校招、员工投诉、老板要报表），你怎么排优先级、依据是什么？":"out/tts/c7243d156a930f61.mp3","第 9 题。未来三年你想成为什么样的 HR？为此你现在正在补什么、缺什么？":"out/tts/6928b90e4015dc7a.mp3","第 10 题。最后，你有什么想问我的？问两个你真正关心的。":"out/tts/7ed7c473c527f69f.mp3","你刚才提到的那个项目，具体数字是多少？你本人在里面具体做了什么？":"out/tts/2ed0773f95c49238.mp3","那个难点，你最后用什么办法验证它真的解决了？":"out/tts/9a9a83029835db33.mp3","如果对方当时坚持不同意你的方案，你会怎么推进？":"out/tts/9d0e74d9afcc91e8.mp3","这次失败之后，你下一次换成了什么做法？效果差多少？":"out/tts/28719138a1a5e804.mp3","那你会用什么具体信号判断这个人值得再给一次机会？":"out/tts/1b4ee0e937460a05.mp3","这套做法在数据变多十倍之后还成立吗？你怎么验证？":"out/tts/036a1fdb510bf651.mp3","对方部门的 KPI 和你的冲突时，你怎么取舍？举个例子。":"out/tts/88d85588326881b6.mp3","如果两件事都很急，你按什么标准排先后？说一次真实的取舍。":"out/tts/8a0a27ac5608bc4e.mp3","这个规划里，你最近三个月准备先补哪一块？为什么是它？":"out/tts/2b951474f3a7df77.mp3","你问的这个问题，希望从面试官这里听到什么样的答案？":"out/tts/402ab9b986c7a84d.mp3","再具体一点：你当时做了什么、结果怎么衡量？":"out/tts/86a1c3de3c478300.mp3","这题答得不错，细节和数字都站得住，右边有证据清单，看一眼。":"out/tts/2ad04d745134e6f7.mp3","还行，但有几处没讲透，缺口写在右边，先过一眼再往下。":"out/tts/9ce2afd167d81d60.mp3","这题偏题了，缺口在右边写着，先补上再说下一题。":"out/tts/c4d2f979f0037347.mp3","今天就到这里，谢谢你。报告在右边，回去慢慢看。":"out/tts/b0e3900748922b72.mp3"}, questions: [{"id":"q1","tag":"自我介绍","text":"先花一分钟做个自我介绍吧。说清楚你现在在做什么、手上有什么成果、为什么想做人力资源这个方向。","focus":"表达是否有结构、有没有可验证的成果、动机是否具体","keywords":["项目","作品","实习","人力资源","HR","数据","工具"]},{"id":"q2","tag":"项目难点","text":"挑一个你最近做的项目，说说它最难的地方在哪、你怎么判断该怎么解决、最后结果怎么样。","focus":"问题定义是否清楚、决策依据、结果能不能量化","keywords":["难点","问题","方案","结果","数据","验证","取舍"]},{"id":"q3","tag":"冲突与复盘","text":"讲一次你和别人意见不一致的经历：当时分歧是什么、你怎么处理的、事后回头看有没有更好的做法。","focus":"是否有共情、冲突处理方式、复盘深度","keywords":["分歧","沟通","对方","结果","复盘","下次","改进"]},{"id":"q4","tag":"失败经历","text":"说一件你做过但没做成的事：你当时的目标是什么、卡在哪一步、从里面学到了什么。","focus":"是否敢讲失败、归因是否客观、有没有转化成方法","keywords":["失败","原因","目标","学到","调整","下次"]},{"id":"q5","tag":"招聘判断","text":"如果一位候选人的简历很漂亮，但面试时表达很紧、明显紧张，你会怎么判断要不要推进？","focus":"有没有评价标准、是否区分「紧张」与「能力不足」、会不会一票否决","keywords":["候选人","标准","岗位","证据","复核","沟通"]},{"id":"q6","tag":"数据与工具","text":"你用过什么工具或方法来提高招聘/人事工作的效率？效果怎么衡量、有什么副作用？","focus":"工具是否真用过、有没有量化、能不能说出副作用","keywords":["工具","效率","数据","指标","副作用","流程"]},{"id":"q7","tag":"跨部门协作","text":"当用人部门和人力的判断不一致（比如他们坚持要一个你觉得不合适的人），你会怎么推进？","focus":"是否有立场又有方法、能不能把分歧变成可验证的问题","keywords":["部门","分歧","对齐","标准","数据","推进"]},{"id":"q8","tag":"压力与优先级","text":"同时有三件急事压在你身上（校招、员工投诉、老板要报表），你怎么排优先级、依据是什么？","focus":"有没有排序依据、是否识别真正的风险、会不会什么都接","keywords":["优先级","风险","时间","影响","沟通","取舍"]},{"id":"q9","tag":"职业规划","text":"未来三年你想成为什么样的 HR？为此你现在正在补什么、缺什么？","focus":"目标是否具体、是否知道自己缺什么、有没有行动计划","keywords":["三年","目标","学习","缺","计划","方向"]},{"id":"q10","tag":"反问环节","text":"最后，你有什么想问我的？问两个你真正关心的。","focus":"问题是否体现对岗位的理解、关心的是成长还是待遇","keywords":["团队","岗位","成长","考核","业务","问题"]}] };
 const $ = (s) => document.querySelector(s);
 const t0 = performance.now();
@@ -481,7 +481,7 @@ document.getElementById('btnTextMode').addEventListener('click', () => enterText
 document.getElementById('btnRetry').addEventListener('click', () => location.reload());
 async function boot() {
   stageEl = $('#stage');
-  document.getElementById('bgLayer').style.backgroundImage = "url('" + BASE + "assets/bg-maid-2026-11-20.png')";
+  document.getElementById('bgLayer').style.backgroundImage = "url('" + BASE + "assets/bg-maid-2026-11-20.webp')";
   app = new PIXI.Application({ backgroundAlpha: 0, antialias: false, autoDensity: true, powerPreference: 'high-performance',
     resolution: Math.min(window.devicePixelRatio || 1, 1.25), resizeTo: stageEl });
   stageEl.appendChild(app.view);
