@@ -65,6 +65,7 @@
     h1 { font-size: 17px; }
     textarea { min-height: 96px; }
   }
+.rubricBanner{margin:0 0 10px;padding:8px 10px;border:1px solid #f0c07a;background:#3a2a12;color:#ffd79a;border-radius:8px;font-size:12.5px;line-height:1.5}
 </style>
 </head>
 <body>
@@ -99,7 +100,7 @@
   </div>
   <aside>
     <h1>大肥鱼 · AI 面试官</h1>
-    <div class="sub">网页演示：固定 10 题、打字作答、本地规则评分、语音只播预录台词。</div>
+    <div class="sub">网页演示：30 题、打字作答、本地规则评分、语音只播预录台词。</div>
     <div class="chips">
       <span class="chip" data-p="idle">待机</span><span class="chip" data-p="asking">提问</span>
       <span class="chip" data-p="listening">倾听</span><span class="chip" data-p="thinking">思考</span>
@@ -772,7 +773,8 @@ async function finish() {
   $('#btnNext').disabled = true; $('#btnFinish').disabled = true; $('#btnSubmit').disabled = true;
   const list = S.results.map((x, i) => `第 ${x.q.id ? i + 1 : i + 1} 题 · ${x.q.tag}　<b>${x.r.overall}</b>`).join('<br>');
   const avg = S.results.length ? Math.round(S.results.reduce((a, x) => a + (x.r.overall || 0), 0) / S.results.length) : 0;
-  $('#report').innerHTML = `${list}<br>平均分（${S.results.length} 题）：<b>${avg}</b><br><span style="font-size:12px">本地规则评分（网页演示版，不调模型）</span>`;
+  const banner = '<div class="rubricBanner">演示模式 · 本次分数由本地规则给出，不是大模型评估。正式版接 DeepSeek 后才是模型评分。</div>';
+  $('#report').innerHTML = `${banner}${list}<br>平均分（${S.results.length} 题）：<b>${avg}</b><br><span style="font-size:12px">本地规则评分（网页演示版，不调模型）</span>`;
   setPhase('idle', '面试结束');
   await speak('今天就到这里，谢谢你。报告在右边，回去慢慢看。');
 }
