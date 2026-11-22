@@ -471,6 +471,7 @@ async function scoreAnswerV4(question, answer, opts = {}) {
 window.SCORE = { localScoreV4, verdictOf, DEFAULT_WEIGHTS, SUB_WEIGHTS, LOCAL_FOLLOWUP };
 </script>
 <script>
+window.__getMouth = () => { try { return core().getParameterValueById('ParamMouthOpenY'); } catch (e) { return null; } };
 let BASE = window.__BASE_FINAL || 'https://cdn.jsdelivr.net/gh/jimiao666/dsh-mianshi@main/';   // __BASE_FINAL 由 lib 加载器写入：实际可用的那条线路；没写入时退回构建时烤死的地址
 const DATA = { modelUrl: BASE + 'model/大肥鱼.model3.json', voice: {"你好，我是大肥鱼，今天由我来面你。别紧张，我们就当聊一聊。":"out/tts/e1256bc848d4f3ad.mp3","你好，我已经看过你的简历和岗位要求了，我们开始面试。":"out/tts/35ff6f2989c15a29.mp3","第 1 题。先花一分钟做个自我介绍吧。说清楚你现在在做什么、手上有什么成果，以及为什么选择这个岗位方向。":"out/tts/78bc8224b1084adb.mp3","第 2 题。挑一个你最近做的项目，说说它最难的地方在哪、你怎么判断该怎么解决、最后结果怎么样。":"out/tts/4501e3a49efece2f.mp3","第 3 题。讲一次你和别人意见不一致的经历：当时分歧是什么、你怎么处理的、事后回头看有没有更好的做法。":"out/tts/efdfbacac56257bc.mp3","第 4 题。说一件你做过但没做成的事：你当时的目标是什么、卡在哪一步、从里面学到了什么。":"out/tts/4c38c8cd69d5989f.mp3","第 5 题。如果一位候选人的简历很漂亮，但面试时表达很紧、明显紧张，你会怎么判断要不要推进？":"out/tts/f3663d483c806781.mp3","第 6 题。你用过什么工具或方法来提高招聘/人事工作的效率？效果怎么衡量、有什么副作用？":"out/tts/e00d3d71d1dbea7f.mp3","第 7 题。当用人部门和人力的判断不一致（比如他们坚持要一个你觉得不合适的人），你会怎么推进？":"out/tts/2b0eb92d1c1a0041.mp3","第 8 题。同时有三件急事压在你身上（校招、员工投诉、老板要报表），你怎么排优先级、依据是什么？":"out/tts/c7243d156a930f61.mp3","第 9 题。未来三年你想成为什么样的 HR？为此你现在正在补什么、缺什么？":"out/tts/6928b90e4015dc7a.mp3","第 10 题。最后，你有什么想问我的？问两个你真正关心的。":"out/tts/7ed7c473c527f69f.mp3","第 11 题。你为什么想做这份实习，又为什么选现在这个时间点来做？":"out/tts/0b03469d7c300379.mp3","第 12 题。说说你身上一个明显的优点和一个确实存在的缺点，各举一个例子。":"out/tts/8aa4ae403f831085.mp3","第 13 题。碰到一个完全没接触过的东西，你一般怎么在短时间内学到能上手？":"out/tts/33493e993a015390.mp3","第 14 题。在小组作业或实习团队里，你通常扮演什么角色？举一个具体的例子。":"out/tts/303272593ee3fd3c.mp3","第 15 题。你要说服一个不认同你方案的人，你会怎么组织你的说法？":"out/tts/c793bd47ca7a08ab.mp3","第 16 题。被当众指出错误或者方案被否定的时候，你当时是什么反应？":"out/tts/c98cfcca3a7704ec.mp3","第 17 题。手上任务很多、时间又不够的时候，你怎么安排？说一个真实的例子。":"out/tts/bb49a9ec7007dd71.mp3","第 18 题。有没有一件事本来不归你管，但你还是去做了？当时为什么这么做？":"out/tts/ffb0d27b6872f847.mp3","第 19 题。如果流程或安排突然变了，比如项目方向临时调整，你一般怎么应对？":"out/tts/7d71267adb655d80.mp3","第 20 题。给你一批招聘数据但没告诉你该看什么，你会先看哪几个指标、为什么？":"out/tts/62f2e1e55840b1b0.mp3","第 21 题。候选人反馈说流程拖得太久、迟迟没有回复，你会怎么处理？":"out/tts/832e35ddfcb90188.mp3","第 22 题。同事让你帮忙查一个候选人的内部信息，但这不在你的权限里，你会怎么做？":"out/tts/8768e369d88008cb.mp3","第 23 题。如果只给你一个很模糊的目标，你会怎么把它拆成能执行的计划？":"out/tts/8f499fde763302c0.mp3","第 24 题。两个选择各有优劣、信息又都不全的时候，你怎么做决定？":"out/tts/1c060421dbc85c0e.mp3","第 25 题。别人给你的反馈里，哪一条让你印象最深？你后来改了什么？":"out/tts/bf7f8d0a34bdf058.mp3","第 26 题。讲一个你觉得压力最大的时期，你是怎么撑过来的？":"out/tts/d3911017c8e4b001.mp3","第 27 题。你还在考虑哪些方向？你是怎么给这些机会排序的？":"out/tts/99538585064a2f7a.mp3","第 28 题。你对这份实习的期待是什么？成长、节奏和回报方面都可以说。":"out/tts/59174f78c2257317.mp3","第 29 题。如果让你带一个两三个人的小项目，你会怎么分工和跟进？":"out/tts/2191e6e14a25f3db.mp3","第 30 题。学业和实习冲突的时候，你会怎么权衡？":"out/tts/e6cf8c2862b49bd8.mp3","你刚才提到的那个项目，具体数字是多少？你本人在里面具体做了什么？":"out/tts/2ed0773f95c49238.mp3","那个难点，你最后用什么办法验证它真的解决了？":"out/tts/9a9a83029835db33.mp3","如果对方当时坚持不同意你的方案，你会怎么推进？":"out/tts/9d0e74d9afcc91e8.mp3","这次失败之后，你下一次换成了什么做法？效果差多少？":"out/tts/28719138a1a5e804.mp3","那你会用什么具体信号判断这个人值得再给一次机会？":"out/tts/1b4ee0e937460a05.mp3","这套做法在数据变多十倍之后还成立吗？你怎么验证？":"out/tts/036a1fdb510bf651.mp3","对方部门的 KPI 和你的冲突时，你怎么取舍？举个例子。":"out/tts/88d85588326881b6.mp3","如果两件事都很急，你按什么标准排先后？说一次真实的取舍。":"out/tts/8a0a27ac5608bc4e.mp3","这个规划里，你最近三个月准备先补哪一块？为什么是它？":"out/tts/2b951474f3a7df77.mp3","你问的这个问题，希望从面试官这里听到什么样的答案？":"out/tts/402ab9b986c7a84d.mp3","再具体一点：你当时做了什么、结果怎么衡量？":"out/tts/86a1c3de3c478300.mp3","这题答得不错，细节和数字都站得住，右边有证据清单，看一眼。":"out/tts/2ad04d745134e6f7.mp3","还行，但有几处没讲透，缺口写在右边，先过一眼再往下。":"out/tts/9ce2afd167d81d60.mp3","这题偏题了，缺口在右边写着，先补上再说下一题。":"out/tts/c4d2f979f0037347.mp3","今天就到这里，谢谢你。报告在右边，回去慢慢看。":"out/tts/b0e3900748922b72.mp3"}, questions: [{"id":"q1","tag":"自我介绍","text":"先花一分钟做个自我介绍吧。说清楚你现在在做什么、手上有什么成果，以及为什么选择这个岗位方向。","focus":"表达是否有结构、有没有可验证的成果、动机是否具体","keywords":["项目","作品","实习","人力资源","HR","数据","工具"]},{"id":"q2","tag":"项目难点","text":"挑一个你最近做的项目，说说它最难的地方在哪、你怎么判断该怎么解决、最后结果怎么样。","focus":"问题定义是否清楚、决策依据、结果能不能量化","keywords":["难点","问题","方案","结果","数据","验证","取舍"]},{"id":"q3","tag":"冲突与复盘","text":"讲一次你和别人意见不一致的经历：当时分歧是什么、你怎么处理的、事后回头看有没有更好的做法。","focus":"是否有共情、冲突处理方式、复盘深度","keywords":["分歧","沟通","对方","结果","复盘","下次","改进"]},{"id":"q4","tag":"失败经历","text":"说一件你做过但没做成的事：你当时的目标是什么、卡在哪一步、从里面学到了什么。","focus":"是否敢讲失败、归因是否客观、有没有转化成方法","keywords":["失败","原因","目标","学到","调整","下次"]},{"id":"q5","tag":"招聘判断","text":"如果一位候选人的简历很漂亮，但面试时表达很紧、明显紧张，你会怎么判断要不要推进？","focus":"有没有评价标准、是否区分「紧张」与「能力不足」、会不会一票否决","keywords":["候选人","标准","岗位","证据","复核","沟通"]},{"id":"q6","tag":"数据与工具","text":"你用过什么工具或方法来提高招聘/人事工作的效率？效果怎么衡量、有什么副作用？","focus":"工具是否真用过、有没有量化、能不能说出副作用","keywords":["工具","效率","数据","指标","副作用","流程"]},{"id":"q7","tag":"跨部门协作","text":"当用人部门和人力的判断不一致（比如他们坚持要一个你觉得不合适的人），你会怎么推进？","focus":"是否有立场又有方法、能不能把分歧变成可验证的问题","keywords":["部门","分歧","对齐","标准","数据","推进"]},{"id":"q8","tag":"压力与优先级","text":"同时有三件急事压在你身上（校招、员工投诉、老板要报表），你怎么排优先级、依据是什么？","focus":"有没有排序依据、是否识别真正的风险、会不会什么都接","keywords":["优先级","风险","时间","影响","沟通","取舍"]},{"id":"q9","tag":"职业规划","text":"未来三年你想成为什么样的 HR？为此你现在正在补什么、缺什么？","focus":"目标是否具体、是否知道自己缺什么、有没有行动计划","keywords":["三年","目标","学习","缺","计划","方向"]},{"id":"q10","tag":"反问环节","text":"最后，你有什么想问我的？问两个你真正关心的。","focus":"问题是否体现对岗位的理解、关心的是成长还是待遇","keywords":["团队","岗位","成长","考核","业务","问题"]},{"id":"q11","tag":"实习动机","text":"你为什么想做这份实习，又为什么选现在这个时间点来做？","focus":"动机是否具体、时间安排是否想清楚、对岗位有没有基本认知","keywords":["动机","实习","时间","岗位","安排"]},{"id":"q12","tag":"优缺点","text":"说说你身上一个明显的优点和一个确实存在的缺点，各举一个例子。","focus":"自我认知是否准确、例子是否真实、缺点有没有在改","keywords":["优点","缺点","例子","自我认知","改进"]},{"id":"q13","tag":"学习方法","text":"碰到一个完全没接触过的东西，你一般怎么在短时间内学到能上手？","focus":"学习路径是否可复用、会不会验证学到的对不对","keywords":["学习","上手","方法","验证","资源"]},{"id":"q14","tag":"团队角色","text":"在小组作业或实习团队里，你通常扮演什么角色？举一个具体的例子。","focus":"是否清楚自己的定位、贡献是否可验证、能不能配合别人","keywords":["团队","角色","分工","配合","例子"]},{"id":"q15","tag":"沟通说服","text":"你要说服一个不认同你方案的人，你会怎么组织你的说法？","focus":"是否先理解对方顾虑、有没有拿证据说话、会不会硬推","keywords":["说服","沟通","顾虑","证据","方案"]},{"id":"q16","tag":"情绪管理","text":"被当众指出错误或者方案被否定的时候，你当时是什么反应？","focus":"情绪是否稳、能不能把批评和事实分开、事后有没有行动","keywords":["情绪","批评","反应","接受","调整"]},{"id":"q17","tag":"时间管理","text":"手上任务很多、时间又不够的时候，你怎么安排？说一个真实的例子。","focus":"有没有排序标准、会不会及时沟通、结果是否可控","keywords":["时间","任务","排序","沟通","例子"]},{"id":"q18","tag":"主动与责任","text":"有没有一件事本来不归你管，但你还是去做了？当时为什么这么做？","focus":"主动性是否真实、边界感是否清楚、做完有没有交代","keywords":["主动","责任","边界","动机","结果"]},{"id":"q19","tag":"适应变化","text":"如果流程或安排突然变了，比如项目方向临时调整，你一般怎么应对？","focus":"对不确定性的耐受度、能不能快速重新排优先级","keywords":["变化","调整","适应","优先","心态"]},{"id":"q20","tag":"数据敏感度","text":"给你一批招聘数据但没告诉你该看什么，你会先看哪几个指标、为什么？","focus":"有没有指标意识、能否从目标倒推该看什么","keywords":["数据","指标","目标","分析","判断"]},{"id":"q21","tag":"候选人体验","text":"候选人反馈说流程拖得太久、迟迟没有回复，你会怎么处理？","focus":"是否站在对方角度、有没有推动流程的办法、会不会只道歉不解决","keywords":["候选人","流程","反馈","沟通","体验"]},{"id":"q22","tag":"合规与边界","text":"同事让你帮忙查一个候选人的内部信息，但这不在你的权限里，你会怎么做？","focus":"边界意识是否清楚、拒绝时会不会给出替代办法","keywords":["权限","边界","合规","拒绝","替代"]},{"id":"q23","tag":"目标拆解","text":"如果只给你一个很模糊的目标，你会怎么把它拆成能执行的计划？","focus":"会不会先确认目标、拆解是否有层次、有没有检查点","keywords":["目标","拆解","计划","确认","检查"]},{"id":"q24","tag":"决策取舍","text":"两个选择各有优劣、信息又都不全的时候，你怎么做决定？","focus":"决策依据是否清楚、会不会收集信息、敢不敢承担结果","keywords":["选择","取舍","信息","依据","承担"]},{"id":"q25","tag":"反馈与成长","text":"别人给你的反馈里，哪一条让你印象最深？你后来改了什么？","focus":"是否真的听进去、改动是否落到行为上","keywords":["反馈","印象","改变","行为","成长"]},{"id":"q26","tag":"抗压能力","text":"讲一个你觉得压力最大的时期，你是怎么撑过来的？","focus":"压力来源是否具体、应对方式是否健康、有没有求助","keywords":["压力","时期","应对","求助","恢复"]},{"id":"q27","tag":"职业选择","text":"你还在考虑哪些方向？你是怎么给这些机会排序的？","focus":"选择标准是否清晰、是否想清楚自己要什么","keywords":["方向","选择","排序","标准","考虑"]},{"id":"q28","tag":"实习期待","text":"你对这份实习的期待是什么？成长、节奏和回报方面都可以说。","focus":"期待是否现实、更看重成长还是待遇、能不能说清楚","keywords":["期待","成长","节奏","回报","现实"]},{"id":"q29","tag":"领导力","text":"如果让你带一个两三个人的小项目，你会怎么分工和跟进？","focus":"有没有分工意识、跟进方式是否可执行、出了偏差怎么办","keywords":["分工","跟进","小项目","协调","偏差"]},{"id":"q30","tag":"学业与实习","text":"学业和实习冲突的时候，你会怎么权衡？","focus":"是否诚实、有没有提前规划、会不会两头都耽误","keywords":["学业","实习","冲突","权衡","规划"]}] };
 const $ = (s) => document.querySelector(s);
@@ -616,6 +617,7 @@ async function boot() {
   clearTimeout(window.__slowT); clearTimeout(window.__toTextT);
   document.getElementById('loading')?.remove();
   const bs = document.getElementById('btnStart'); if (bs) { bs.disabled = false; bs.textContent = '开始面试'; }
+  window.__modelReady = true;
   log('模型就绪');
   if (TEXT_FIRST) {
     const sw = document.getElementById('btnSwitchStage');
@@ -656,7 +658,32 @@ function step() {
 }
 
 /* ---------- 说话 ---------- */
-let actx, analyser, srcNode;
+// 说明：语音文件在 CDN（跨域），走 MediaElementSource 会被浏览器静音、分析器读不到数据，
+// 手机上表现为「有声音（原生播放）/嘴不动（分析器全零）」。这里改成：
+// 音频用 <audio> 原生播，嘴型用「合成包络」驱动，听感与画面都对得上。
+function synthMouth(durationSec) {
+  const t0 = performance.now();
+  const total = Math.max(300, durationSec * 1000);
+  let peak = 0;
+  return new Promise((resolve) => {
+    const tick = () => {
+      const t = (performance.now() - t0) / 1000;
+      if (t * 1000 >= total) {
+        try { core().setParameterValueById('ParamMouthOpenY', 0); } catch (e) {}
+        resolve(peak);
+        return;
+      }
+      // 三个不同频率的正弦叠加 + 轻微抖动：模拟说话的开合节奏
+      const env = 0.55 + 0.25 * Math.sin(t * 9.1) + 0.15 * Math.sin(t * 21.7);
+      const m = Math.max(0, Math.min(1, env * (0.65 + 0.35 * Math.abs(Math.sin(t * 3.3)))));
+      peak = Math.max(peak, m);
+      try { core().setParameterValueById('ParamMouthOpenY', m); } catch (e) {}
+      requestAnimationFrame(tick);
+    };
+    tick();
+  });
+}
+
 async function speak(text) {
   const cap = $('#caption');
   cap.textContent = text;
@@ -664,35 +691,24 @@ async function speak(text) {
   if (S.mute || !src) {
     const ms = Math.min(9000, Math.max(1200, text.length * 180));
     cap.classList.add('on');
+    synthMouth(ms / 1000);
     await new Promise((r) => setTimeout(r, ms));
     cap.classList.remove('on');
     return { duration: ms / 1000, silent: true };
   }
   const audio = new Audio(BASE + src);
-  if (!actx) {
-    actx = new (window.AudioContext || window.webkitAudioContext)();
-    analyser = actx.createAnalyser(); analyser.fftSize = 2048; analyser.smoothingTimeConstant = 0.15;
-  }
-  await Promise.race([actx.resume(), new Promise((r) => setTimeout(r, 1500))]);
-  srcNode = srcNode || actx.createMediaElementSource(audio);
-  srcNode.connect(analyser); analyser.connect(actx.destination);
-  const data = new Uint8Array(analyser.fftSize);
-  let playing = true;
-  const drive = () => {
-    if (!playing) return;
-    analyser.getByteTimeDomainData(data);
-    let sum = 0; for (let i = 0; i < data.length; i++) { const v = (data[i] - 128) / 128; sum += v * v; }
-    const rms = Math.sqrt(sum / data.length);
-    const m = Math.max(0, Math.min(1, (rms - 0.004) * 5.5));
-    try { core().setParameterValueById('ParamMouthOpenY', m); } catch (e) {}
-    requestAnimationFrame(drive);
-  };
+  audio.crossOrigin = 'anonymous';
   cap.classList.add('on');
-  drive();
+  const durHint = 2 + text.length * 0.18;
+  synthMouth(durHint);
   await new Promise((resolve) => {
     let done = false;
-    const finish = () => { if (done) return; done = true; playing = false; cap.classList.remove('on');
-      try { core().setParameterValueById('ParamMouthOpenY', 0); } catch (e) {} resolve(); };
+    const finish = () => {
+      if (done) return; done = true;
+      cap.classList.remove('on');
+      try { core().setParameterValueById('ParamMouthOpenY', 0); } catch (e) {}
+      resolve();
+    };
     audio.onended = finish;
     audio.onerror = finish;
     setTimeout(finish, Math.min(15000, (text.length * 260) + 6000));
@@ -700,6 +716,15 @@ async function speak(text) {
   });
   return { duration: audio.duration || 0 };
 }
+
+// 看门狗：模型 45 秒还没就绪就明说，并保证文字模式可继续
+setTimeout(() => {
+  if (window.__modelReady) return;
+  const t = document.getElementById('loadTitle');
+  if (t) t.textContent = '先答题，模型还没好（网络或设备受限），题目与评分不受影响。';
+  const bs = document.getElementById('btnStart');
+  if (bs) { bs.disabled = false; if (bs.textContent.includes('开始')) bs.textContent = '先开始答题'; }
+}, 45000);
 
 /* ---------- 评分 ---------- */
 function renderScore(r) {
@@ -723,7 +748,7 @@ function renderScore(r) {
 }
 
 /* ---------- 流程 ---------- */
-const questions = DATA.questions.slice(0, 10);
+const questions = DATA.questions;
 const greetings = ['你好，我是大肥鱼，今天由我来面你。别紧张，我们就当聊一聊。'];
 async function start() {
   setPhase('asking', '开始');
