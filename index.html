@@ -100,7 +100,7 @@
   </div>
   <aside>
     <h1>大肥鱼 · AI 面试官</h1>
-    <div class="sub">网页演示：30 题、打字作答、本地规则评分、语音只播预录台词。</div>
+    <div class="sub">网页演示：5 题、打字作答、本地规则评分、语音只播预录台词。</div>
     <div class="chips">
       <span class="chip" data-p="idle">待机</span><span class="chip" data-p="asking">提问</span>
       <span class="chip" data-p="listening">倾听</span><span class="chip" data-p="thinking">思考</span>
@@ -748,7 +748,7 @@ function renderScore(r) {
 }
 
 /* ---------- 流程 ---------- */
-const questions = DATA.questions;
+const questions = DATA.questions.slice(0, DATA.demoCount || 5);
 const greetings = ['你好，我是大肥鱼，今天由我来面你。别紧张，我们就当聊一聊。'];
 async function start() {
   setPhase('asking', '开始');
