@@ -139,11 +139,12 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <script>
 (function () {
-  var HOSTS = ["./","./","https://cdn.jsdelivr.net/gh/jimiao666/dsh-mianshi@main/","https://fastly.jsdelivr.net/gh/jimiao666/dsh-mianshi@main/","https://gcore.jsdelivr.net/gh/jimiao666/dsh-mianshi@main/","https://testingcf.jsdelivr.net/gh/jimiao666/dsh-mianshi@main/"];
+  var HOSTS = ["https://cdn.jsdelivr.net/gh/jimiao666/dsh-mianshi@main/","https://fastly.jsdelivr.net/gh/jimiao666/dsh-mianshi@main/","https://gcore.jsdelivr.net/gh/jimiao666/dsh-mianshi@main/","https://testingcf.jsdelivr.net/gh/jimiao666/dsh-mianshi@main/","./","./"];
   var FILES = ["live2dcubismcore.min.js","pixi.min.js","cubism4.min.js"];
   var head = document.head || document.documentElement;
   var tally = {};
   function note(m) { var d = document.getElementById('loadSub'); if (d) d.textContent = m; }
+  note('正在加载界面脚本…');
   function loadOne(f, i) {
     return new Promise(function (res, rej) {
       if (i >= HOSTS.length) { rej(new Error('lib ' + f + '：所有源都没加载上')); return; }
@@ -153,7 +154,7 @@
         if (settled) return; settled = true; s.remove();
         note('线路 ' + (i + 1) + ' 太慢，换线路 ' + (i + 2) + '/' + HOSTS.length + '…');
         loadOne(f, i + 1).then(res, rej);
-      }, 15000);
+      }, 6000);
       s.src = HOSTS[i] + 'lib/' + f;
       s.onload = function () { if (settled) return; settled = true; clearTimeout(timer); tally[HOSTS[i]] = (tally[HOSTS[i]] || 0) + 1; res(); };
       s.onerror = function () {
@@ -174,6 +175,12 @@
     for (var h in tally) if (tally[h] > n) { n = tally[h]; best = h; }
     window.__BASE_FINAL = best;
     return true;
+  }).catch(function (e) {
+    var t = document.getElementById('loadTitle');
+    if (t) t.textContent = '界面脚本没加载上：换个网络或刷新一次再试。';
+    var d = document.getElementById('loadSub');
+    if (d) d.textContent = String(e && e.message || e);
+    throw e;
   });
   // 60 秒引擎还没就绪就自动进纯文字模式（加载不取消，成功后刷新可换回出镜版）
   setTimeout(function () {
