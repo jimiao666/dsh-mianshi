@@ -819,7 +819,9 @@ async function finish() {
   $('#btnFinish').onclick = () => finish();
   $('#mute').onchange = (e) => { S.mute = e.target.checked; log('静音=' + S.mute); };
   $('#answer').addEventListener('input', (e) => { $('#len').textContent = e.target.value.trim().length + ' 字'; });
-  (window.__libsReady || Promise.resolve()).then(() => {
+  const libsWatchdog = new Promise((r) => setTimeout(() => r('timeout'), 12000));
+  Promise.race([window.__libsReady || Promise.resolve(true), libsWatchdog]).then((v) => {
+    if (v === 'timeout') { log('界面脚本 12 秒没就绪，先切文字模式'); enterTextMode('界面脚本加载慢'); return; }
     if (window.__BASE_FINAL) { BASE = window.__BASE_FINAL; DATA.modelUrl = BASE + 'model/大肥鱼.model3.json'; }
     return boot();
   }).catch((e) => {
